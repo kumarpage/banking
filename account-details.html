@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Banking - Account Details</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 font-sans">
+  <!-- Navigation Bar -->
+  <nav class="bg-blue-800 text-white p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">SecureBank</h1>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:underline">Home</a></li>
+        <li><a href="#services" class="hover:underline">Services</a></li>
+        <li><a href="#fixed-deposit" class="hover:underline">Fixed Deposit</a></li>
+        <li><a href="#e-services" class="hover:underline">E-Services</a></li>
+        <li><a href="account-details.html" class="hover:underline">Account Details</a></li>
+        <li><a href="#about-us" class="hover:underline">About Us</a></li>
+        <li><button id="logoutBtn" class="hover:underline bg-transparent border-none cursor-pointer">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Account Overview Section -->
+  <section class="py-10">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center">Account Details</h2>
+      <div class="bg-white p-6 shadow rounded mb-8">
+        <h3 class="text-2xl font-semibold mb-4">Account Overview</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <p><strong>Account Holder:</strong> John Doe</p>
+            <p><strong>Account Number:</strong> **** **** **** 1234</p>
+          </div>
+          <div>
+            <p><strong>Account Type:</strong> Savings</p>
+            <p><strong>Current Balance:</strong> $5,000.00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Transactions -->
+      <div class="bg-white p-6 shadow rounded mb-8">
+        <h3 class="text-2xl font-semibold mb-4">Recent Transactions</h3>
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="p-2 text-left">Date</th>
+              <th class="p-2 text-left">Description</th>
+              <th class="p-2 text-right">Amount</th>
+              <th class="p-2 text-right">Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="p-2">2025-09-10</td>
+              <td class="p-2">Salary Deposit</td>
+              <td class="p-2 text-right text-green-600">+$2,500.00</td>
+              <td class="p-2 text-right">$5,000.00</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-2">2025-09-08</td>
+              <td class="p-2">Grocery Purchase</td>
+              <td class="p-2 text-right text-red-600">-$150.00</td>
+              <td class="p-2 text-right">$2,500.00</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-2">2025-09-05</td>
+              <td class="p-2">Utility Bill Payment</td>
+              <td class="p-2 text-right text-red-600">-$200.00</td>
+              <td class="p-2 text-right">$2,650.00</td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-2">2025-09-01</td>
+              <td class="p-2">Interest Credit</td>
+              <td class="p-2 text-right text-green-600">+$50.00</td>
+              <td class="p-2 text-right">$2,850.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="bg-white p-6 shadow rounded">
+        <h3 class="text-2xl font-semibold mb-4">Quick Actions</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700">Transfer Funds</button>
+          <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700">Pay Bills</button>
+          <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700">View Statements</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white py-4 text-center">
+    <p>&copy; 2025 SecureBank. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simple logout functionality
+    document.getElementById('logoutBtn').addEventListener('click', function () {
+      alert('Logging out...');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+
+</html>
