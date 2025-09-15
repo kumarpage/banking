@@ -1,1 +1,9 @@
 /* Add custom styles here */
+.hero-bg {
+  background-image: url('images/map.svg');
+  background-size: cover; /* Or 'contain' if you want it to fit without cropping */
+  background-position: right;
+  background-repeat: no-repeat;
+  /* Fallback color if SVG fails to load */
+  background-color: #2563eb; /* Matches Tailwind's blue-600 */
+}

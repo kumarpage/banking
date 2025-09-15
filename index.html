@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -11,79 +11,155 @@
 </head>
 
 <body class="bg-gray-100 font-sans">
-  <!-- Navigation Bar -->
-  <nav class="bg-blue-800 text-white p-4 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
+  <!-- Navigation Bar (Full-width background, structured with primary and secondary rows) -->
+  <nav class="bg-blue-800 text-white shadow-md w-full">
+    <!-- Primary Row: Logo and Login/Signup -->
+    <div class="container mx-auto flex justify-between items-center p-4">
       <h1 class="text-2xl font-bold">DemoBank</h1>
-      <ul class="flex space-x-6">
-        <li><a href="index.html" class="hover:underline">Home</a></li>
-        <li><a href="login.html" class="hover:underline">Login/Signup</a></li>
-        <li><a href="#services" class="hover:underline">Services</a></li>
-        <li><a href="#fixed-deposit" class="hover:underline">Fixed Deposit</a></li>
-        <li><a href="#e-services" class="hover:underline">E-Services</a></li>
-        <li><a href="#account-details" class="hover:underline">Account Details</a></li>
-        <li><a href="#about-us" class="hover:underline">About Us</a></li>
-      </ul>
+      <div class="flex items-center space-x-6">
+        <a href="login.html" class="hover:underline hidden md:block">Login/Signup</a>
+        <!-- Hide on mobile, show on md+ -->
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="md:hidden text-3xl focus:outline-none">&#9776;</button>
+        <!-- Hamburger icon -->
+      </div>
+    </div>
+
+    <!-- Secondary Row: Other navigation links, right-aligned on desktop, hidden/toggle on mobile; visibility controls padding -->
+    <div id="secondaryNav" class="w-full hidden md:block">
+      <!-- Toggle hidden on this div; no py-2 here to avoid extra space when hidden -->
+      <div class="container mx-auto">
+        <ul
+          class="flex flex-col md:flex-row md:justify-center space-y-4 md:space-y-0 md:space-x-6 py-2 p-4 md:py-2 md:px-0">
+          <li><a href="#services" class="hover:underline">Services</a></li>
+          <li><a href="#fixed-deposit" class="hover:underline">Fixed Deposit</a></li>
+          <li><a href="#e-services" class="hover:underline">E-Services</a></li>
+          <li><a href="#account-details" class="hover:underline">Account Details</a></li>
+          <li><a href="#about-us" class="hover:underline">About Us</a></li>
+          <!-- Show Login on mobile menu -->
+          <li class="md:hidden"><a href="login.html" class="hover:underline">Login/Signup</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="bg-blue-600 text-white py-20 text-center">
-    <div class="container mx-auto">
-      <h2 class="text-4xl font-bold mb-4">Welcome to DemoBank</h2>
-      <p class="text-lg mb-6">Your trusted partner for online banking. Manage your finances securely and easily.</p>
-      <a href="login.html" class="bg-white text-blue-800 px-6 py-3 rounded hover:bg-gray-200">Get Started</a>
+  <!-- Hero Section (Full-width background with SVG, content in container, with overlay for dull effect) -->
+  <section class="hero-bg font-sans text-white py-32 text-center w-full relative md:py-40">
+    <!-- Increased height with py-32 (md:py-40 for larger screens); changed font to sans for clean look -->
+    <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Overlay to make background dull -->
+    <div class="container mx-auto relative z-10">
+      <h2 class="text-5xl mb-4 tracking-tight">Welcome to <strong class="font-extrabold">DemoBank</strong></h2>
+      <!-- Impactful heading: larger size, extrabold, tracking for emphasis -->
+      <p class="text-3xl mb-6 pb-8">Your trusted partner for online banking. Manage your finances securely and easily.
+      </p> <!-- Decent running text: standard sans, slightly larger -->
+      <a href="login.html"
+        class="bg-blue-700 text-white px-8 py-4 rounded-lg hover:bg-blue-800 font-semibold text-lg shadow-md">Start
+        Banking Now</a> <!-- Reverted to title case text -->
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="py-10">
+  <section id="services" class="py-10 bg-white w-full">
     <div class="container mx-auto">
       <h3 class="text-3xl font-bold mb-6 text-center">Our Services</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 shadow rounded">Personal Banking</div>
-        <div class="bg-white p-6 shadow rounded">Business Banking</div>
-        <div class="bg-white p-6 shadow rounded">Loans & Credit</div>
+        <div>
+          <div class="text-center mb-4">
+            <span class="text-4xl">💼</span> <!-- Simple icon for Personal Banking -->
+          </div>
+          <h4 class="text-xl font-semibold mb-2 text-center">Personal Banking</h4>
+          <p class="text-gray-600 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div>
+          <div class="text-center mb-4">
+            <span class="text-4xl">🏢</span> <!-- Simple icon for Business Banking -->
+          </div>
+          <h4 class="text-xl font-semibold mb-2 text-center">Business Banking</h4>
+          <p class="text-gray-600 text-center">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div>
+          <div class="text-center mb-4">
+            <span class="text-4xl">💰</span> <!-- Simple icon for Loans & Credit -->
+          </div>
+          <h4 class="text-xl font-semibold mb-2 text-center">Loans & Credit</h4>
+          <p class="text-gray-600 text-center">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Fixed Deposit Section -->
-  <section id="fixed-deposit" class="bg-gray-200 py-10">
+  <!-- Fixed Deposit Section (Full-width gray background, content in container) -->
+  <section id="fixed-deposit" class="bg-gray-200 py-10 w-full">
     <div class="container mx-auto text-center">
       <h3 class="text-3xl font-bold mb-6">Fixed Deposits</h3>
       <p>Earn high interest on your savings. Coming soon...</p>
     </div>
   </section>
 
-  <!-- E-Services Section -->
-  <section id="e-services" class="py-10">
+  <!-- E-Services Section (Full-width white background, content in container) -->
+  <section id="e-services" class="py-10 bg-white w-full">
     <div class="container mx-auto text-center">
       <h3 class="text-3xl font-bold mb-6">E-Services</h3>
       <p>Bill payments, transfers, and more. Coming soon...</p>
     </div>
   </section>
 
-  <!-- Account Details Section -->
-  <section id="account-details" class="bg-gray-200 py-10">
+  <!-- Account Details Section (Full-width gray background, content in container) -->
+  <section id="account-details" class="bg-gray-200 py-10 w-full">
     <div class="container mx-auto text-center">
       <h3 class="text-3xl font-bold mb-6">Account Details</h3>
       <p>View balances and transactions. Login to access.</p>
     </div>
   </section>
 
-  <!-- About Us Section -->
-  <section id="about-us" class="py-10">
+  <!-- About Us Section (Full-width white background, content in container) -->
+  <section id="about-us" class="py-10 bg-white w-full">
     <div class="container mx-auto text-center">
       <h3 class="text-3xl font-bold mb-6">About Us</h3>
       <p>We are a leading bank committed to innovation and security.</p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-blue-800 text-white py-4 text-center">
-    <p>&copy; 2025 DemoBank. All rights reserved.</p>
+  <!-- Footer (Full-width background, content in container for centered text) -->
+  <footer class="bg-blue-800 text-white py-4 text-center w-full">
+    <div class="container mx-auto">
+      <p>&copy; 2025 DemoBank. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- Back to Top Button (with chevron-like upward arrow icon, wider and shorter icon in a circle background) -->
+  <button id="backToTop"
+    class="fixed bottom-4 right-4 bg-blue-800 text-white w-12 h-12 flex items-center justify-center rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300 hidden shadow-md text-3xl">&#8963;</button>
+  <!-- Kept circle with rounded-full, w-12 h-12; icon &#8963; (⌃) is wedge/chevron up, inherently wider/shorter; text-3xl centers and fills nicely -->
+
+  <!-- JavaScript for Mobile Menu Toggle and Back to Top -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const secondaryNav = document.getElementById('secondaryNav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      secondaryNav.classList.toggle('hidden');
+    });
+
+    // Back to Top Button Functionality
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.classList.remove('hidden');
+      } else {
+        backToTopBtn.classList.add('hidden');
+      }
+    };
+
+    backToTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 
 </html>

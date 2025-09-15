@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Banking - Account Details</title>
+  <title>DemoBank - Account Details</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
@@ -12,19 +12,13 @@
 
 <body class="bg-gray-100 font-sans">
   <!-- Navigation Bar -->
-  <nav class="bg-blue-800 text-white p-4 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">SecureBank</h1>
-      <ul class="flex space-x-6">
-        <li><a href="index.html" class="hover:underline">Home</a></li>
-        <li><a href="#services" class="hover:underline">Services</a></li>
-        <li><a href="#fixed-deposit" class="hover:underline">Fixed Deposit</a></li>
-        <li><a href="#e-services" class="hover:underline">E-Services</a></li>
-        <li><a href="account-details.html" class="hover:underline">Account Details</a></li>
-        <li><a href="#about-us" class="hover:underline">About Us</a></li>
-        <li><button id="logoutBtn" class="hover:underline bg-transparent border-none cursor-pointer">Logout</button>
-        </li>
-      </ul>
+  <nav class="bg-blue-800 text-white shadow-md w-full">
+    <!-- Primary Row: Logo and Logout -->
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold">DemoBank</h1>
+      <div class="flex items-center space-x-6">
+        <button id="logoutBtn" class="hover:underline bg-transparent border-none cursor-pointer">Logout</button>
+      </div>
     </div>
   </nav>
 
@@ -36,7 +30,7 @@
         <h3 class="text-2xl font-semibold mb-4">Account Overview</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <p><strong>Account Holder:</strong> John Doe</p>
+            <p><strong>Account Holder:</strong> Kumar Kannipoti</p>
             <p><strong>Account Number:</strong> **** **** **** 1234</p>
           </div>
           <div>
@@ -87,21 +81,12 @@
         </table>
       </div>
 
-      <!-- Quick Actions -->
-      <div class="bg-white p-6 shadow rounded">
-        <h3 class="text-2xl font-semibold mb-4">Quick Actions</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700">Transfer Funds</button>
-          <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700">Pay Bills</button>
-          <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700">View Statements</button>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-blue-800 text-white py-4 text-center">
-    <p>&copy; 2025 SecureBank. All rights reserved.</p>
+    <p>&copy; 2025 DemoBank. All rights reserved.</p>
   </footer>
 
   <script>

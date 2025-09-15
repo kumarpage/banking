@@ -9,7 +9,7 @@ document
     // Mock login service (hardcoded for demo)
     if (username === 'user' && password === '1111') {
       alert('Login successful! Redirecting to account details...');
-      // Redirect to account details (placeholder; create account-details.html later)
+      // Redirect to account details
       window.location.href = 'account-details.html';
     } else {
       alert('Invalid username or password. Please try again.');
