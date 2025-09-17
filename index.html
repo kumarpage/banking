@@ -11,11 +11,11 @@
 </head>
 
 <body class="bg-gray-100 font-sans">
-  <!-- Navigation Bar (Full-width background, structured with primary and secondary rows) -->
+  <!-- Navigation Bar -->
   <nav class="bg-blue-800 text-white shadow-md w-full">
-    <!-- Primary Row: Logo and Login/Signup -->
+    <!-- Primary Row: Logo and Login -->
     <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">DemoBank</h1>
+      <h1 class="text-2xl font-bold tracking-tight">DemoBank</h1>
       <div class="flex items-center space-x-6">
         <a href="login.html" class="hover:underline hidden md:block">Login/Signup</a>
         <!-- Hide on mobile, show on md+ -->
@@ -25,9 +25,8 @@
       </div>
     </div>
 
-    <!-- Secondary Row: Other navigation links, right-aligned on desktop, hidden/toggle on mobile; visibility controls padding -->
+    <!-- Secondary Row: Other navigation links -->
     <div id="secondaryNav" class="w-full hidden md:block">
-      <!-- Toggle hidden on this div; no py-2 here to avoid extra space when hidden -->
       <div class="container mx-auto">
         <ul
           class="flex flex-col md:flex-row md:justify-center space-y-4 md:space-y-0 md:space-x-6 py-2 p-4 md:py-2 md:px-0">
@@ -36,14 +35,14 @@
           <li><a href="#e-services" class="hover:underline">E-Services</a></li>
           <li><a href="#account-details" class="hover:underline">Account Details</a></li>
           <li><a href="#about-us" class="hover:underline">About Us</a></li>
-          <!-- Show Login on mobile menu -->
           <li class="md:hidden"><a href="login.html" class="hover:underline">Login/Signup</a></li>
+          <!-- Show Login on mobile menu -->
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section (Full-width background with SVG, content in container, with overlay for dull effect) -->
+  <!-- Hero Section (Full-width background with SVG/image, content in container, with overlay for dull effect) -->
   <section class="hero-bg font-sans text-white py-32 text-center w-full relative md:py-40">
     <!-- Increased height with py-32 (md:py-40 for larger screens); changed font to sans for clean look -->
     <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Overlay to make background dull -->
@@ -51,10 +50,10 @@
       <h2 class="text-5xl mb-4 tracking-tight">Welcome to <strong class="font-extrabold">DemoBank</strong></h2>
       <!-- Impactful heading: larger size, extrabold, tracking for emphasis -->
       <p class="text-3xl mb-6 pb-8">Your trusted partner for online banking. Manage your finances securely and easily.
-      </p> <!-- Decent running text: standard sans, slightly larger -->
+      </p>
       <a href="login.html"
         class="bg-blue-700 text-white px-8 py-4 rounded-lg hover:bg-blue-800 font-semibold text-lg shadow-md">Start
-        Banking Now</a> <!-- Reverted to title case text -->
+        Banking Now</a>
     </div>
   </section>
 
@@ -62,104 +61,356 @@
   <section id="services" class="py-10 bg-white w-full">
     <div class="container mx-auto">
       <h3 class="text-3xl font-bold mb-6 text-center">Our Services</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div>
-          <div class="text-center mb-4">
-            <span class="text-4xl">💼</span> <!-- Simple icon for Personal Banking -->
+      <div id="carouselContainer" class="relative overflow-hidden"> <!-- Added ID for hover pause -->
+
+        <!-- Carousel Wrapper -->
+        <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+          <!-- Slide 1: Personal Banking -->
+          <div class="w-full flex-shrink-0 p-4 h-auto">
+            <div class="rounded-lg overflow-hidden md:flex">
+              <div class="p-6 md:w-1/2">
+                <img src="./images/fill-the-blank.svg" alt="Personal Banking">
+              </div>
+              <div class="p-6 md:w-1/2">
+                <h4 class="text-xl font-bold mb-2 text-left uppercase text-gray-600">Personal Banking</h4>
+                <!-- Added uppercase; increased mb-4 -->
+                <p class="text-gray-600 text-left mb-6 leading-relaxed">Experience seamless personal banking with
+                  DemoBank.</p> <!-- Increased mb-4 to mb-6; added leading-relaxed for more line spacing -->
+                <ul class="list-none mb-8 space-y-6 text-gray-600">
+                  <!-- Removed list-disc for custom; increased space-y-4 to space-y-6; mb-6 to mb-8 -->
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>Open checking or
+                    savings accounts with competitive interest rates up to 2.5% APY.</li>
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>Enjoy 24/7 online
+                    access for transfers, bill payments, and mobile deposits.</li>
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>Advanced security
+                    features including two-factor authentication and fraud monitoring.</li>
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>Personalized financial
+                    insights and budgeting tools to achieve your goals.</li>
+                </ul>
+                <a href="#personal-banking" class="text-blue-600 hover:underline font-semibold">Learn More</a>
+              </div>
+            </div>
           </div>
-          <h4 class="text-xl font-semibold mb-2 text-center">Personal Banking</h4>
-          <p class="text-gray-600 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div>
-          <div class="text-center mb-4">
-            <span class="text-4xl">🏢</span> <!-- Simple icon for Business Banking -->
+          <!-- Slide 2: Business Banking -->
+          <div class="w-full flex-shrink-0 p-4 h-auto">
+            <div class="rounded-lg overflow-hidden md:flex">
+              <div class="p-6 md:w-1/2">
+                <img src="./images/pricing-page.svg" alt="Business Banking">
+              </div>
+              <div class="p-6 md:w-1/2">
+                <h4 class="text-xl font-bold mb-2 text-left uppercase text-gray-600">Business Banking</h4>
+                <!-- Added uppercase; increased mb-4 -->
+                <p class="text-gray-600 text-left mb-6 leading-relaxed">Empower your business with DemoBank's
+                  comprehensive solutions.</p>
+                <!-- Increased mb-4 to mb-6; added leading-relaxed for more line spacing -->
+                <ul class="list-none mb-8 space-y-6 text-gray-600">
+                  <!-- Removed list-disc for custom; increased space-y-4 to space-y-6; mb-6 to mb-8 -->
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>Business checking
+                    accounts with no monthly fees for qualifying balances.</li>
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>Merchant services for
+                    seamless payments and payroll processing.</li>
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>Cash management tools
+                    and lines of credit tailored to your needs.</li>
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>Dedicated business
+                    advisors and integration with QuickBooks.</li>
+                </ul>
+                <a href="#business-banking" class="text-blue-600 hover:underline font-semibold">Get Started</a>
+              </div>
+            </div>
           </div>
-          <h4 class="text-xl font-semibold mb-2 text-center">Business Banking</h4>
-          <p class="text-gray-600 text-center">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-            ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div>
-          <div class="text-center mb-4">
-            <span class="text-4xl">💰</span> <!-- Simple icon for Loans & Credit -->
+          <!-- Slide 3: Loans & Credit -->
+          <div class="w-full flex-shrink-0 p-4 h-auto">
+            <div class="rounded-lg overflow-hidden md:flex">
+              <div class="p-6 md:w-1/2">
+                <img src="./images/pay-with-credit-card.svg" alt="Loans & Credit">
+              </div>
+              <div class="p-6 md:w-1/2">
+                <h4 class="text-xl font-bold mb-2 text-left uppercase text-gray-600">Loans & Credit</h4>
+                <!-- Added uppercase; increased mb-4 -->
+                <p class="text-gray-600 text-left mb-6 leading-relaxed">Secure your future with DemoBank's flexible loan
+                  and credit options.</p> <!-- Increased mb-4 to mb-6; added leading-relaxed for more line spacing -->
+                <ul class="list-none mb-8 space-y-6 text-gray-600">
+                  <!-- Removed list-disc for custom; increased space-y-4 to space-y-6; mb-6 to mb-8 -->
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>Personal loans
+                    starting at 5.99% APR with quick decisions.</li>
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>Home equity lines,
+                    auto financing, and credit cards with up to 2% cash back.</li>
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>No origination fees on
+                    select products and online applications.</li>
+                  <li class="flex items-start"><span class="mr-3 text-blue-600 font-bold">✓</span>Expert guidance to
+                    build or repair your credit with competitive rates.</li>
+                </ul>
+                <a href="#loans-credit" class="text-blue-600 hover:underline font-semibold">Apply Now</a>
+              </div>
+            </div>
           </div>
-          <h4 class="text-xl font-semibold mb-2 text-center">Loans & Credit</h4>
-          <p class="text-gray-600 text-center">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-            dolore eu fugiat nulla pariatur.</p>
         </div>
+
+        <!-- Navigation Left & Right Arrows-->
+        <button id="prevBtn"
+          class="absolute left-0 top-1/2 transform -translate-y-1/2 text-blue-800 text-4xl opacity-75 hover:opacity-100">&#10094;</button>
+        <button id="nextBtn"
+          class="absolute right-0 top-1/2 transform -translate-y-1/2 text-blue-800 text-4xl opacity-75 hover:opacity-100">&#10095;</button>
+
+        <!-- Indicators -Dots -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-index="0"></span>
+          <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-index="1"></span>
+          <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer" data-index="2"></span>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Fixed Deposit Section (Full-width gray background, content in container) -->
-  <section id="fixed-deposit" class="bg-gray-200 py-10 w-full">
-    <div class="container mx-auto text-center">
+  <!-- Fixed Deposits Section -->
+  <section id="fixed-deposit" class="py-16 gray-100">
+    <div class="container mx-auto px-6 lg:px-8 text-center">
       <h3 class="text-3xl font-bold mb-6">Fixed Deposits</h3>
-      <p>Earn high interest on your savings. Coming soon...</p>
+      <p class="text-lg text-gray-700 mb-6 leading-relaxed">Secure your savings with DemoBank's Fixed Deposits, offering
+        guaranteed returns and flexible tenures.<br>
+        Lock in high interest rates to grow your money safely over time, protected by FDIC insurance up to $250,000.</p>
+      <img src="./images/savings.svg" alt="Fixed Deposits Illustration"
+        class="w-full h-64 md:h-auto object-cover transform hover:scale-105 transition-transform duration-300 py-10">
+      <div class="md:flex flex-col">
+        <h4 class="text-xl font-semibold text-blue-700 text-center mb-6">Key Benefits</h4>
+        <div class="flex flex-col items-center space-y-2 mb-8">
+          <div class="w-full max-w-xl bg-white rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">Earn competitive interest rates up to 4.75% APY on terms from 3 months to
+              5 years.</p>
+          </div>
+          <div class="w-full max-w-xl bg-white rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">No market risk – your principal and interest are fixed and predictable.
+            </p>
+          </div>
+          <div class="w-full max-w-xl bg-white rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">Flexible options: Choose lump-sum payouts or monthly interest credits to
+              your account.</p>
+          </div>
+          <div class="w-full max-w-xl bg-white rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">Easy online application with instant approval for existing customers.</p>
+          </div>
+        </div>
+        <div class="mb-6">
+          <!-- Sample Interest Rates-->
+          <h4 class="text-xl font-semibold mb-4 text-blue-700">Sample Interest Rates</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <!-- Card 1: 3-6 Months -->
+            <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+              <h5 class="text-lg font-medium text-blue-800 mb-2">3-6 Months</h5>
+              <p class="text-gray-700"><span class="font-semibold">Rate (APY):</span> 3.50%</p>
+              <p class="text-gray-700"><span class="font-semibold">Min Deposit:</span> $1,000</p>
+            </div>
+            <!-- Card 2: 1 Year -->
+            <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+              <h5 class="text-lg font-medium text-blue-800 mb-2">1 Year</h5>
+              <p class="text-gray-700"><span class="font-semibold">Rate (APY):</span> 4.25%</p>
+              <p class="text-gray-700"><span class="font-semibold">Min Deposit:</span> $500</p>
+            </div>
+            <!-- Card 3: 2-5 Years -->
+            <div class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+              <h5 class="text-lg font-medium text-blue-800 mb-2">2-5 Years</h5>
+              <p class="text-gray-700"><span class="font-semibold">Rate (APY):</span> 4.75%</p>
+              <p class="text-gray-700"><span class="font-semibold">Min Deposit:</span> $500</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <a href="login.html"
+        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-md">Open
+        a Fixed Deposit Today</a>
     </div>
   </section>
 
-  <!-- E-Services Section (Full-width white background, content in container) -->
-  <section id="e-services" class="py-10 bg-white w-full">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-6">E-Services</h3>
-      <p>Bill payments, transfers, and more. Coming soon...</p>
+  <!-- E-Services Section -->
+  <section id="e-services" class="py-16 bg-white">
+    <div class="container mx-auto px-6 lg:px-8 text-center">
+      <h3 class="text-3xl font-bold mb-6 text-center">E-Services</h3>
+      <p class="text-lg text-gray-700 mb-6 leading-relaxed">Streamline your banking with DemoBank's E-Services.<br />
+        Enjoy convenient online tools for bill payments, fund transfers, and more, all from the comfort of your home
+        or on the go.<br /> Our secure platform ensures fast, reliable transactions with real-time notifications.</p>
+      <img src="./images/online-transactions.svg" alt="E-Services Illustration"
+        class="w-full h-64 md:h-auto object-cover transform hover:scale-105 transition-transform duration-300 py-10">
+      <div class="md:flex flex-col text-center">
+        <h4 class="text-xl font-semibold text-blue-700 text-center mb-6">Key Features</h4>
+        <div class="flex flex-col items-center space-y-6 mb-8">
+          <div class="w-full max-w-xl bg-gray-100 rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">Instant fund transfers between accounts or to other banks via ACH or
+              wire.</p>
+          </div>
+          <div class="w-full max-w-xl bg-gray-100 rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">Easy bill payments to utilities, credit cards, and vendors with
+              scheduled or one-time options.</p>
+          </div>
+          <div class="w-full max-w-xl bg-gray-100 rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">Mobile check deposits using your phone's camera for quick and secure
+              uploads.</p>
+          </div>
+          <div class="w-full max-w-xl bg-gray-100 rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">Real-time alerts for transactions, low balances, and security events
+              via email or SMS.</p>
+          </div>
+        </div>
+        <h4 class="text-xl font-semibold mb-4 text-blue-700 my-8">Available Services</h4>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 max-w-4xl mx-auto py-10">
+          <!-- Service 1: Bill Payments -->
+          <div class="p-4 border-l-4 border-blue-600 text-left">
+            <!-- Added left border for standout design; text-left for alignment -->
+            <h5 class="text-lg font-medium text-blue-800 mb-2">Bill Payments</h5>
+            <p class="text-gray-600 text-sm"><span class="font-semibold">Fee:</span> Free for standard</p>
+            <p class="text-gray-600 text-sm"><span class="font-semibold">Processing Time:</span> Same-day</p>
+          </div>
+          <!-- Service 2: Fund Transfers -->
+          <div class="p-4 border-l-4 border-blue-600 text-left">
+            <h5 class="text-lg font-medium text-blue-800 mb-2">Fund Transfers</h5>
+            <p class="text-gray-600 text-sm"><span class="font-semibold">Fee:</span> $0 internal, $5 external</p>
+            <p class="text-gray-600 text-sm"><span class="font-semibold">Processing Time:</span> Instant internal</p>
+          </div>
+          <!-- Service 3: Check Deposits -->
+          <div class="p-4 border-l-4 border-blue-600 text-left">
+            <h5 class="text-lg font-medium text-blue-800 mb-2">Check Deposits</h5>
+            <p class="text-gray-600 text-sm"><span class="font-semibold">Fee:</span> Free</p>
+            <p class="text-gray-600 text-sm"><span class="font-semibold">Processing Time:</span> 1-2 business days</p>
+          </div>
+          <!-- Service 4: Alerts & Notifications -->
+          <div class="p-4 border-l-4 border-blue-600 text-left">
+            <h5 class="text-lg font-medium text-blue-800 mb-2">Alerts & Notifications</h5>
+            <p class="text-gray-600 text-sm"><span class="font-semibold">Fee:</span> Free</p>
+            <p class="text-gray-600 text-sm"><span class="font-semibold">Processing Time:</span> Real-time</p>
+          </div>
+        </div>
+      </div>
+      <a href="login.html"
+        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-md">Access
+        E-Services</a> <!-- Linked to login page for access -->
+
     </div>
   </section>
 
-  <!-- Account Details Section (Full-width gray background, content in container) -->
-  <section id="account-details" class="bg-gray-200 py-10 w-full">
-    <div class="container mx-auto text-center">
+  <!-- Account Details Section -->
+  <section id="account-details" class="py-16 gray-100">
+    <div class="container mx-auto px-6 lg:px-8 text-center">
       <h3 class="text-3xl font-bold mb-6">Account Details</h3>
-      <p>View balances and transactions. Login to access.</p>
+      <p class="text-lg text-gray-700 mb-6 leading-relaxed">Access your account details securely with DemoBank. View
+        real-time balances, transaction history, and manage your finances effortlessly. <br />Our platform provides
+        detailed insights into your accounts, protected by advanced security measures. <i>Login to see your
+          personalized account information.</i></p>
+      <img src="./images/drag-and-drop.svg" alt="Fixed Deposits Illustration"
+        class="w-full h-64 md:h-auto object-cover transform hover:scale-105 transition-transform duration-300 py-10">
+      <div class="md:flex flex-col">
+
+        <h4 class="text-xl font-semibold text-blue-700 text-center mb-6">Key Features</h4>
+        <div class="flex flex-col items-center space-y-2 mb-8">
+          <div class="w-full max-w-xl bg-white rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">Real-time account balances for checking, savings, and investment
+              accounts.</p>
+          </div>
+          <div class="w-full max-w-xl bg-white rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">Detailed transaction history with search and filter options.</p>
+          </div>
+          <div class="w-full max-w-xl bg-white rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">Downloadable statements in PDF or CSV format for easy record-keeping.
+            </p>
+          </div>
+          <div class="w-full max-w-xl bg-white rounded-lg shadow-md p-4 flex items-start">
+            <span class="mr-3 text-blue-600 font-bold text-xl flex-shrink-0">✓</span>
+            <p class="text-gray-600 text-left">Customizable alerts for account activity, such as large transactions or
+              low balances.</p>
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold mb-4 text-blue-700">Sample Account Overview</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="font-bold mb-2">Checking Account</h4>
+            <p>Balance: $x,xxx.xx</p>
+            <p>Available: $x,xxx.xx</p>
+            <p class="text-gray-500 text-sm italic mt-4">Personalized data available upon login.</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="font-bold mb-2">Savings Account</h4>
+            <p>Balance: $xx,xxx.xx</p>
+            <p>Interest Earned: $xx.xx</p>
+            <p class="text-gray-500 text-sm italic mt-4">Personalized data available upon login.</p>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+            <h4 class="font-bold mb-2">Credit Card</h4>
+            <p>Balance: $x,xxx.xx</p>
+            <p>Available Credit: $x,xxx.xx</p>
+            <p class="text-gray-500 text-sm italic mt-4">Personalized data available upon login.</p>
+          </div>
+        </div>
+      </div>
+      <a href="login.html"
+        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-md">View
+        Account Details</a> <!-- Linked to login page for access -->
     </div>
   </section>
 
-  <!-- About Us Section (Full-width white background, content in container) -->
-  <section id="about-us" class="py-10 bg-white w-full">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-6">About Us</h3>
-      <p>We are a leading bank committed to innovation and security.</p>
+  <!-- About Us Section -->
+  <section id="about-us" class="py-12 bg-gray-800 text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-6">About Us</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div class="bg-blue-900 p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-4">Our History</h3>
+          <p>
+            Founded in 2005, DemoBank has grown into a trusted national bank, focused on trust and innovation.
+          </p>
+        </div>
+
+        <div class="bg-blue-900 p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
+          <p>
+            We empower customers with secure, innovative banking solutions to achieve their financial goals.
+          </p>
+        </div>
+
+        <div class="bg-blue-900 p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-semibold mb-4">Our Core Values</h3>
+          <ul class="list-disc list-inside space-y-2">
+            <li><span class="font-bold">Integrity:</span> Honest and transparent dealings.</li>
+            <li><span class="font-bold">Customer Focus:</span> Personalized, reliable service.</li>
+            <li><span class="font-bold">Innovation:</span> Cutting-edge tech for simple banking.</li>
+            <li><span class="font-bold">Security:</span> Top priority asset protection.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p class="mb-4">
+          Experience banking designed for you at DemoBank.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Footer (Full-width background, content in container for centered text) -->
+  <!-- Footer -->
   <footer class="bg-blue-800 text-white py-4 text-center w-full">
     <div class="container mx-auto">
       <p>&copy; 2025 DemoBank. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Back to Top Button (with chevron-like upward arrow icon, wider and shorter icon in a circle background) -->
+  <!-- Back to Top Button -->
   <button id="backToTop"
-    class="fixed bottom-4 right-4 bg-blue-800 text-white w-12 h-12 flex items-center justify-center rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300 hidden shadow-md text-3xl">&#8963;</button>
-  <!-- Kept circle with rounded-full, w-12 h-12; icon &#8963; (⌃) is wedge/chevron up, inherently wider/shorter; text-3xl centers and fills nicely -->
+    class="fixed bottom-4 right-4 bg-blue-800 text-white w-12 h-12 flex items-center justify-center rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300 hidden shadow-md text-3xl -rotate-90">&#10095;</button>
 
-  <!-- JavaScript for Mobile Menu Toggle and Back to Top -->
-  <script>
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const secondaryNav = document.getElementById('secondaryNav');
 
-    mobileMenuBtn.addEventListener('click', () => {
-      secondaryNav.classList.toggle('hidden');
-    });
 
-    // Back to Top Button Functionality
-    const backToTopBtn = document.getElementById('backToTop');
-
-    window.onscroll = function () {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopBtn.classList.remove('hidden');
-      } else {
-        backToTopBtn.classList.add('hidden');
-      }
-    };
-
-    backToTopBtn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+  <script src="index.js"></script>
 </body>
 
 </html>
