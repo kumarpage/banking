@@ -81,6 +81,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Initial setup
-  showSlide(currentIndex); // Set initial height and display
+  showSlide(currentIndex);
   startAutoSlide();
+
+  // Disclaimer Banner Functionality
+  const disclaimerBanner = document.getElementById('disclaimer-banner');
+  const closeButton = document.getElementById('close-disclaimer');
+
+  // Check if already dismissed
+  if (localStorage.getItem('disclaimerDismissed') === 'true') {
+    disclaimerBanner.classList.add('hidden');
+  }
+
+  // Close button handler
+  closeButton.addEventListener('click', () => {
+    disclaimerBanner.classList.add('hidden');
+    localStorage.setItem('disclaimerDismissed', 'true');
+  });
 });
