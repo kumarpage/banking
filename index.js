@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     secondaryNav.classList.toggle('hidden');
   });
 
-  // Back to Top Button Functionality
+  // Back to Top
   const backToTopBtn = document.getElementById('backToTop');
 
   window.onscroll = function () {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Carousel Functionality
+  // Carousel
   const carousel = document.getElementById('carousel');
   const carouselContainer = document.getElementById('carouselContainer');
   const prevBtn = document.getElementById('prevBtn');
@@ -84,16 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
   showSlide(currentIndex);
   startAutoSlide();
 
-  // Disclaimer Banner Functionality
-  const disclaimerBanner = document.getElementById('disclaimer-banner');
-  const closeButton = document.getElementById('close-disclaimer');
+  // Disclaimer
+  const disclaimerBanner = document.getElementById('disclaimer');
+  const closeButton = document.getElementById('closeDisclaimer');
 
-  // Check if already dismissed
   if (localStorage.getItem('disclaimerDismissed') === 'true') {
     disclaimerBanner.classList.add('hidden');
   }
 
-  // Close button handler
   closeButton.addEventListener('click', () => {
     disclaimerBanner.classList.add('hidden');
     localStorage.setItem('disclaimerDismissed', 'true');

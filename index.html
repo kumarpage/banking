@@ -12,15 +12,14 @@
 
 <body class="bg-gray-100 font-sans">
 
-  <div id="disclaimer-banner" class="bg-yellow-200 text-center p-2 relative">
-    <p>This is a fictional demo banking website for educational purposes only. No real transactions or data are handled
-      here.</p>
-    <button id="close-disclaimer"
-      class="absolute text-2xl top-0 right-5 text-gray-600 hover:text-gray-800 focus:outline-none">
-      &times; <!-- Close icon (×) -->
-    </button>
+  <!-- Disclaimer -->
+  <div id="disclaimer" class="bg-yellow-200 text-gray-800 p-4 text-center relative flex items-center justify-center">
+    <span class="flex-grow text-center pr-8">This is a fictional demo banking website for educational purposes only. No
+      real transactions or data are handled here.</span>
+    <button id="closeDisclaimer"
+      class="text-2xl absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800 focus:outline-none">&times;</button>
   </div>
-  <!-- Navigation Bar -->
+
   <nav class="bg-blue-800 text-white shadow-md w-full">
     <!-- Primary Row: Logo and Login -->
     <div class="container mx-auto flex justify-between items-center p-4">
@@ -51,13 +50,11 @@
     </div>
   </nav>
 
-  <!-- Hero Section (Full-width background with SVG/image, content in container, with overlay for dull effect) -->
+  <!-- Hero Section -->
   <section class="hero-bg font-sans text-white py-32 text-center w-full relative md:py-40">
-    <!-- Increased height with py-32 (md:py-40 for larger screens); changed font to sans for clean look -->
-    <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Overlay to make background dull -->
+    <div class="absolute inset-0 bg-black opacity-50"></div>
     <div class="container mx-auto relative z-10">
       <h2 class="text-5xl mb-4 tracking-tight">Welcome to <strong class="font-extrabold">DemoBank</strong></h2>
-      <!-- Impactful heading: larger size, extrabold, tracking for emphasis -->
       <p class="text-3xl mb-6 pb-8">Your trusted partner for online banking. Manage your finances securely and easily.
       </p>
       <a href="login.html"
@@ -70,7 +67,7 @@
   <section id="services" class="py-10 bg-white w-full">
     <div class="container mx-auto">
       <h3 class="text-3xl font-bold mb-6 text-center">Our Services</h3>
-      <div id="carouselContainer" class="relative overflow-hidden"> <!-- Added ID for hover pause -->
+      <div id="carouselContainer" class="relative overflow-hidden">
 
         <!-- Carousel Wrapper -->
         <div id="carousel" class="flex transition-transform duration-500 ease-in-out">

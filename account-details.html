@@ -1,47 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DemoBank - Account Details</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+  <title>Account Details - DemoBank</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 font-sans">
-  <!-- Navigation Bar -->
-  <nav class="bg-blue-800 text-white shadow-md w-full">
-    <!-- Primary Row: Logo and Logout -->
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">DemoBank</h1>
-      <div class="flex items-center space-x-6">
-        <button id="logoutBtn" class="hover:underline bg-transparent border-none cursor-pointer">Logout</button>
-      </div>
-    </div>
-  </nav>
+<body class="flex flex-col min-h-screen bg-gray-100">
 
-  <!-- Account Overview Section -->
-  <section class="py-10">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-6 text-center">Account Details</h2>
-      <div class="bg-white p-6 shadow rounded mb-8">
-        <h3 class="text-2xl font-semibold mb-4">Account Overview</h3>
+  <header class="bg-blue-800 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">DemoBank</h1>
+      <nav class="flex space-x-4">
+        <a href="#" id="logoutBtn" class="hover:underline">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto py-8 flex-1">
+    <h2 class="text-3xl font-bold mb-6 text-center">Account Details</h2>
+
+    <div class="bg-white p-6 rounded shadow-md max-w-2xl mx-auto">
+      <!-- Overview -->
+      <section class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4">Overview</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <p><strong>Account Holder:</strong> Kumar Kannipoti</p>
-            <p><strong>Account Number:</strong> **** **** **** 1234</p>
+            <p class="font-bold">Account Holder:</p>
+            <p id="accountHolder" class="text-gray-700">Loading...</p>
           </div>
           <div>
-            <p><strong>Account Type:</strong> Savings</p>
-            <p><strong>Current Balance:</strong> $5,000.00</p>
+            <p class="font-bold">Account Number:</p>
+            <p id="accountNumber" class="text-gray-700">Loading...</p>
+          </div>
+          <div>
+            <p class="font-bold">Account Type:</p>
+            <p id="accountType" class="text-gray-700">Loading...</p>
+          </div>
+          <div>
+            <p class="font-bold">Current Balance:</p>
+            <p id="currentBalance" class="text-gray-700">Loading...</p>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Recent Transactions -->
-      <div class="bg-white p-6 shadow rounded mb-8">
+      <section>
         <h3 class="text-2xl font-semibold mb-4">Recent Transactions</h3>
         <table class="w-full border-collapse">
           <thead>
@@ -52,50 +58,23 @@
               <th class="p-2 text-right">Balance</th>
             </tr>
           </thead>
-          <tbody>
-            <tr class="border-b">
-              <td class="p-2">2025-09-10</td>
-              <td class="p-2">Salary Deposit</td>
-              <td class="p-2 text-right text-green-600">+$2,500.00</td>
-              <td class="p-2 text-right">$5,000.00</td>
-            </tr>
-            <tr class="border-b">
-              <td class="p-2">2025-09-08</td>
-              <td class="p-2">Grocery Purchase</td>
-              <td class="p-2 text-right text-red-600">-$150.00</td>
-              <td class="p-2 text-right">$2,500.00</td>
-            </tr>
-            <tr class="border-b">
-              <td class="p-2">2025-09-05</td>
-              <td class="p-2">Utility Bill Payment</td>
-              <td class="p-2 text-right text-red-600">-$200.00</td>
-              <td class="p-2 text-right">$2,650.00</td>
-            </tr>
-            <tr class="border-b">
-              <td class="p-2">2025-09-01</td>
-              <td class="p-2">Interest Credit</td>
-              <td class="p-2 text-right text-green-600">+$50.00</td>
-              <td class="p-2 text-right">$2,850.00</td>
+          <tbody id="recentTransactions">
+            <tr>
+              <td colspan="4" class="p-2 text-center text-gray-500">Loading transactions...</td>
             </tr>
           </tbody>
         </table>
-      </div>
-
+      </section>
     </div>
-  </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="bg-blue-800 text-white py-4 text-center">
+  <footer class="bg-blue-800 text-white p-4 text-center">
     <p>&copy; 2025 DemoBank. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Simple logout functionality
-    document.getElementById('logoutBtn').addEventListener('click', function () {
-      alert('Logging out...');
-      window.location.href = 'login.html';
-    });
-  </script>
+  <script src="account-details.js"></script>
+
 </body>
 
 </html>
