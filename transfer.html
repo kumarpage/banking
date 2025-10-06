@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transfer - DemoBank</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-100">
+
+  <!-- Header-->
+  <header class="bg-blue-800 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">DemoBank</h1>
+      <button id="mobileSideMenuBtn" class="md:hidden text-2xl text-white">&#9776;</button>
+      <nav class="hidden md:flex space-x-4">
+        <a href="#" id="logoutBtn" class="hover:underline">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container mx-auto py-8 flex-1 flex flex-col md:flex-row">
+    <!-- Side Menu  -->
+    <aside id="sideMenu"
+      class="w-64 p-4 fixed inset-y-0 left-0 overflow-y-auto transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:static md:block hidden md:flex-shrink-0">
+      <h3 class="text-xl font-bold mb-4">Overview</h3>
+      <ul>
+        <li><a href="account-details.html" class="block hover:bg-gray-300 p-2 rounded">Account
+            Details</a></li>
+        <li><a href="transfer.html" class="block bg-blue-600 text-white p-2 rounded ">Transfer Money</a></li>
+        <li><a href="add-payee.html" class="block hover:bg-gray-300 p-2 rounded">Add Payee</a></li>
+      </ul>
+    </aside>
+    <main class="flex-1">
+
+      <!-- Main -->
+      <div class="bg-white rounded shadow-md  container mx-auto flex-1">
+        <div class=" p-6  max-w-full md:max-w-md">
+
+          <form id="transferForm" class="space-y-4">
+            <div>
+              <label for="payee" class="block text-gray-700">Select Payee</label>
+              <select id="payee" class="w-full px-3 py-2 border rounded" required></select>
+            </div>
+            <div>
+              <label for="amount" class="block text-gray-700">Amount</label>
+              <input type="number" id="amount" class="w-full px-3 py-2 border rounded" required>
+            </div>
+            <div>
+              <label for="desc" class="block text-gray-700">Description (Optional)</label>
+              <input type="text" id="desc" class="w-full px-3 py-2 border rounded">
+            </div>
+            <button type="submit"
+              class="w-auto bg-blue-800 text-white py-2 px-3 rounded hover:bg-blue-600">Transfer</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white p-4 text-center">
+    <p>&copy; 2025 DemoBank. All rights reserved.</p>
+  </footer>
+
+  <script src="transfer.js"></script>
+
+
+</body>
+
+</html>

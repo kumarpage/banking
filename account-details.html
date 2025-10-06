@@ -19,56 +19,68 @@
     </div>
   </header>
 
-  <main class="container mx-auto py-8 flex-1">
-    <h2 class="text-3xl font-bold mb-6 text-center">Account Details</h2>
+  <div class="container mx-auto py-8 flex-1 flex flex-col md:flex-row">
+    <!-- Side Menu  -->
+    <aside id="sideMenu"
+      class="w-64 p-4 fixed inset-y-0 left-0 overflow-y-auto transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:static md:block hidden md:flex-shrink-0">
+      <h3 class="text-xl font-bold mb-4">Overview</h3>
+      <ul>
+        <li><a class="block bg-blue-600 text-white p-2 rounded ">Account
+            Details</a></li>
+        <li><a href="transfer.html" class="block hover:bg-gray-300 p-2 rounded">Transfer Money</a></li>
+        <li><a href="add-payee.html" class="block hover:bg-gray-300 p-2 rounded">Add Payee</a></li>
+      </ul>
+    </aside>
+    <!-- Main  -->
+    <main class="flex-1">
 
-    <div class="bg-white p-6 rounded shadow-md max-w-2xl mx-auto">
-      <!-- Overview -->
-      <section class="mb-8">
-        <h3 class="text-2xl font-semibold mb-4">Overview</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <p class="font-bold">Account Holder:</p>
-            <p id="accountHolder" class="text-gray-700">Loading...</p>
-          </div>
-          <div>
-            <p class="font-bold">Account Number:</p>
-            <p id="accountNumber" class="text-gray-700">Loading...</p>
-          </div>
-          <div>
-            <p class="font-bold">Account Type:</p>
-            <p id="accountType" class="text-gray-700">Loading...</p>
-          </div>
-          <div>
-            <p class="font-bold">Current Balance:</p>
-            <p id="currentBalance" class="text-gray-700">Loading...</p>
-          </div>
-        </div>
-      </section>
+      <div class="bg-white p-6 rounded shadow-md mx-auto mt-6">
 
-      <!-- Recent Transactions -->
-      <section>
-        <h3 class="text-2xl font-semibold mb-4">Recent Transactions</h3>
-        <table class="w-full border-collapse">
-          <thead>
-            <tr class="bg-gray-200">
-              <th class="p-2 text-left">Date</th>
-              <th class="p-2 text-left">Description</th>
-              <th class="p-2 text-right">Amount</th>
-              <th class="p-2 text-right">Balance</th>
-            </tr>
-          </thead>
-          <tbody id="recentTransactions">
-            <tr>
-              <td colspan="4" class="p-2 text-center text-gray-500">Loading transactions...</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </div>
-  </main>
+        <section class="mb-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <p class="font-bold">Account Holder:</p>
+              <p id="accountHolder" class="text-gray-700">Loading...</p>
+            </div>
+            <div>
+              <p class="font-bold">Account Number:</p>
+              <p id="accountNumber" class="text-gray-700">Loading...</p>
+            </div>
+            <div>
+              <p class="font-bold">Account Type:</p>
+              <p id="accountType" class="text-gray-700">Loading...</p>
+            </div>
+            <div>
+              <p class="font-bold">Current Balance:</p>
+              <p id="currentBalance" class="text-gray-700">Loading...</p>
+            </div>
+          </div>
+        </section>
 
-  <!-- Footer -->
+        <!-- Recent Transactions -->
+        <section>
+          <h3 class="text-2xl font-semibold mb-4">Recent Transactions</h3>
+          <table class="w-full border-collapse">
+            <thead>
+              <tr class="bg-gray-200">
+                <th class="p-2 text-left">Date</th>
+                <th class="p-2 text-left">Description</th>
+                <th class="p-2 text-right">Amount</th>
+                <th class="p-2 text-right">Balance</th>
+              </tr>
+            </thead>
+            <tbody id="recentTransactions">
+              <tr>
+                <td colspan="4" class="p-2 text-center text-gray-500">Loading transactions...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
+
+  </div>
+
   <footer class="bg-blue-800 text-white p-4 text-center">
     <p>&copy; 2025 DemoBank. All rights reserved.</p>
   </footer>

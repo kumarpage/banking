@@ -12,12 +12,12 @@ if (!loggedInUser) {
     document.getElementById('accountType').textContent =
       data.accountType || 'Savings';
     document.getElementById('currentBalance').textContent =
-      `$${data.currentBalance}` || '$0.00';
+      `$${data.currentBalance.toFixed(2)}` || '$0.00';
 
     const tBody = document.getElementById('recentTransactions');
     tBody.innerHTML = '';
 
-    if (data.recentTransactions && data.recentTransactions.length > 0) {
+    if (data.recentTransactions.length > 0) {
       data.recentTransactions.forEach((row) => {
         const tr = document.createElement('tr');
         tr.classList.add('border-b');
@@ -34,7 +34,8 @@ if (!loggedInUser) {
 
         const tdAmount = document.createElement('td');
         tdAmount.classList.add('p-2', 'text-right');
-        tdAmount.textContent = `${row.amount}$`;
+        const sign = row.amount > 0 ? '+' : '-';
+        tdAmount.textContent = `${sign}$${Math.abs(row.amount).toFixed(2)}`;
         tdAmount.classList.add(
           row.amount > 0 ? 'text-green-600' : 'text-red-600'
         );
@@ -42,7 +43,7 @@ if (!loggedInUser) {
 
         const tdBalance = document.createElement('td');
         tdBalance.classList.add('p-2', 'text-right');
-        tdBalance.textContent = `$${data.currentBalance}`;
+        tdBalance.textContent = `$${data.currentBalance.toFixed(2)}`;
         tr.appendChild(tdBalance);
 
         tBody.appendChild(tr);
@@ -58,30 +59,27 @@ if (!loggedInUser) {
     }
   }
 
-  if (loggedInUser.username === 'demo') {
+  const userData = JSON.parse(localStorage.getItem('userData')) || {};
+  let data = userData[loggedInUser.username];
+
+  if (loggedInUser.username === 'demo' && !data) {
     fetch('demo-data.json')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
+      .then((response) => response.json())
+      .then((jsonData) => {
+        data = jsonData;
+        userData[loggedInUser.username] = data;
+        localStorage.setItem('userData', JSON.stringify(userData));
         loadAccountDetails(data);
       })
       .catch((error) => {
         console.error('Error fetching demo data:', error);
-        alert('Error loading demo account details. re-directing to login');
+        alert('Error loading demo account details. Redirecting to login');
         window.location.href = 'login.html';
       });
   } else {
-    loadAccountDetails({
-      accountHolder: loggedInUser.username,
-      accountNumber: 'XXXX-XXXX-XXXX-XXXX',
-      accountType: 'Savings',
-      currentBalance: 0,
-      recentTransactions: [],
-    });
+    loadAccountDetails(data);
   }
 
-  //logout
   document
     .getElementById('logoutBtn')
     .addEventListener('click', function (event) {

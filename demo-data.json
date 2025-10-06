@@ -19,5 +19,17 @@
       "description": "Interest credited",
       "amount": 25.25
     }
+  ],
+  "payees": [
+    {
+      "name": "John Doe",
+      "accountNumber": "9876-5432-1098-7654",
+      "bank": "OtherBank"
+    },
+    {
+      "name": "Jane Smith",
+      "accountNumber": "1122-3344-5566-7788",
+      "bank": "DemoBank"
+    }
   ]
 }
